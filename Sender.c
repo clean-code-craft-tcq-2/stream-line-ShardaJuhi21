@@ -1,14 +1,14 @@
-#include "Sender.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
 
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include "Sender.h"
 
 void readBMSDataFromFile(float* Temperature, float* SOC, float* ChargeRate)
 {
-  FILE* fp = fopen("./Sender_Data.txt","r");
+  FILE* fp = fopen("./BMS_DataParameter.txt","r");
   float Temp_readings, SOC_readings, ChargeRate_readings;
-
+  
   for(int i=0; fscanf(fp, "%f \t %f \t %f \n", &Temp_readings,&SOC_readings,&ChargeRate_readings)!=EOF; i++)
     {
       *(Temperature + i) = Temp_readings;
@@ -21,7 +21,7 @@ void readBMSDataFromFile(float* Temperature, float* SOC, float* ChargeRate)
 void sendBMSDataToConsole(float* Temperature, float* SOC, float* ChargeRate)
 {
   float tempToPrint, SOCToPrint, chargeRateToPrint;
-
+  
   for(int i=0;i<No_of_Readings; i++)
   {
     tempToPrint = *(Temperature + i);
