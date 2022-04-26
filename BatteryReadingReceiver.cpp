@@ -10,7 +10,7 @@ TEST_CASE("Tests to check whether sensor data is read from console")
   float Current_MaxValue, Current_MinValue, Current_SMAValue, expectedMaxValue, expectedMinValue, expectedSMAValue;
   
   BatteryReceiver(Temperature,SOC,ChargeRate);
-  float expectedoutput[2][3] = {{6,53,0.9}, {44,64,1}};
+  float expectedoutput[2][3] = {{0.68,57,42}, {0.65,58,45}};
   for(int i=0;i<2;i++)
   {
     REQUIRE(Temperature[i] == expectedoutput[i][0]);
@@ -19,8 +19,8 @@ TEST_CASE("Tests to check whether sensor data is read from console")
   }
   
   // Verify Max, Min values are correct for parameter Temperature
-  expectedMaxValue = 45.000000;
-  expectedMinValue = 0.000000;
+  expectedMaxValue = 1.000000;
+  expectedMinValue = -0.5.000000;
   Current_MaxValue = ComputeMax(Temperature);
   Current_MinValue = ComputeMin(Temperature);
   REQUIRE(Current_MaxValue == expectedMaxValue);
