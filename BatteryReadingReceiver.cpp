@@ -20,7 +20,7 @@ TEST_CASE("Tests to check whether sensor data is read from console")
   
   // Verify Max, Min values are correct for parameter Temperature
   expectedMaxValue = 1.000000;
-  expectedMinValue = -0.5.000000;
+  expectedMinValue = -0.500000;
   Current_MaxValue = ComputeMax(Temperature);
   Current_MinValue = ComputeMin(Temperature);
   REQUIRE(Current_MaxValue == expectedMaxValue);
