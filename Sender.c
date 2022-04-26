@@ -31,10 +31,9 @@ void sendBMSDataToConsole(float* Temperature, float* SOC, float* ChargeRate)
   }
 }
 
-void printOnConsole(float Temp, float SOC, float chargeRate)
+void printOnConsole(float TempPrint, float SOCPrint, float ChargeRatePrint)
 {
-  //printf("Temperature: %d\t SOC: %d\t ChargeRate: %.2f\n", TempPrint,SOCPrint,ChargeRatePrint);
-  sprintf("%2f,%d,%d",chargeRate,SOC,Temp);  
+  printf("%.2f,%.2f,%.2f\n", TempPrint,SOCPrint,ChargeRatePrint);
 }
 
 void bms_DataSender()
