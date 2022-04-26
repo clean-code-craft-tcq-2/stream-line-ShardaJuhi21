@@ -16,4 +16,5 @@ TEST_CASE("Test to verify the data read")
     REQUIRE(SOC[i] == expectedOutput[i][1]);
     REQUIRE(ChargeRate[i] == expectedOutput[i][2]);
   }
+  bms_DataSender();
 }
